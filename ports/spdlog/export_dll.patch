@@ -1,0 +1,33 @@
+diff --git a/include/spdlog/common.h b/include/spdlog/common.h
+index af405095..3f2a8ac2 100644
+--- a/include/spdlog/common.h
++++ b/include/spdlog/common.h
+@@ -15,20 +15,20 @@
+ #include <type_traits>
+ #include <functional>
+ 
+-#ifdef SPDLOG_COMPILED_LIB
+-#undef SPDLOG_HEADER_ONLY
+-#if defined(_WIN32) && defined(SPDLOG_SHARED_LIB)
+-#ifdef spdlog_EXPORTS
++#ifdef _WIN32
++#if defined(SPDLOG_COMPILED_LIB) &&  defined(spdlog_EXPORTS) && defined(SPDLOG_SHARED_LIB)
+ #define SPDLOG_API __declspec(dllexport)
+-#else
++#else // !defined(spdlog_EXPORTS) || !SPDLOG_SHARED_LIB
+ #define SPDLOG_API __declspec(dllimport)
+ #endif
+-#else // !defined(_WIN32) || !defined(SPDLOG_SHARED_LIB)
+-#define SPDLOG_API
++#else // !defined(_WIN32)
++#define SPDLOG_API __attribute__((visibility("default")))
+ #endif
++
++#ifdef SPDLOG_COMPILED_LIB
++#undef SPDLOG_HEADER_ONLY
+ #define SPDLOG_INLINE
+ #else // !defined(SPDLOG_COMPILED_LIB)
+-#define SPDLOG_API
+ #define SPDLOG_HEADER_ONLY
+ #define SPDLOG_INLINE inline
+ #endif // #ifdef SPDLOG_COMPILED_LIB
