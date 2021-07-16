@@ -1,0 +1,17 @@
+{
+  "name": "rlbox-sandboxing-api",
+  "version-semver": "0.1.0",
+  "description": "RLBox sandboxing API (in C++ 17)",
+  "homepage": "https://github.com/PLSysSec/rlbox_sandboxing_api",
+  "dependencies": [
+    "catch2",
+    {
+      "name": "vcpkg-cmake",
+      "host": true
+    },
+    {
+      "name": "vcpkg-cmake-config",
+      "host": true
+    }
+  ]
+}
