@@ -5,8 +5,8 @@ endif()
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO PoseLib/PoseLib
-    REF "v${VERSION}"
-    SHA512 ed56d8cd6a3073776edbfe9d11e2ebf8e2bed4065f7f53a02541323c1631632bf6c161d305fc09674175351b024bf019211dfa9d7a48e74e3c5563941099f1ef
+    REF fa7280fee27f97aff31ae7f98bab7f583fac7d08
+    SHA512 624c8789bf99113ef23b987736eabc9b7844afdb2fd4d39e0bae086bcb59375f29e011d1bec82c8aff53df5515f4e84d6ec79ec0714e0c04db45992db56050e8
     HEAD_REF master
     PATCHES
         fatal-errors.patch

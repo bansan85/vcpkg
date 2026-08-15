@@ -76,7 +76,7 @@ if("cuda" IN_LIST FEATURES)
     list(APPEND FEATURE_OPTIONS
         "-DCMAKE_CUDA_COMPILER=${NVCC}"
         "-DCUDAToolkit_ROOT=${cuda_toolkit_root}"
-        # "-DCMAKE_CUDA_ARCHITECTURES=native"
+        "-DCMAKE_CUDA_ARCHITECTURES=61"
         # too much warnings about attribute
         "-DCMAKE_CUDA_FLAGS=-Xcudafe --diag_suppress=2803 -Wno-deprecated-gpu-targets"
     )
